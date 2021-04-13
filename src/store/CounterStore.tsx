@@ -1,23 +1,20 @@
-import { observable, action } from "mobx";
-import React from "react";
+import { makeAutoObservable } from "mobx";
 
-class CounterStore {
-  @observable count: number = 0;
+class Store {
+  count: number = 0;
 
-  @action.bound increment() {
-    console.log("increment");
+  constructor() {
+    makeAutoObservable(this);
+  }
+
+  increment() {
     this.count++;
   }
 
-  @action.bound decrement() {
+  decrement() {
     this.count--;
   }
-
-  @action.bound reset() {
-    this.count = 0;
-  }
 }
-const counterStore = new CounterStore();
-export default counterStore;
 
-export const counterStoreContext = React.createContext(counterStore);
+const store = new Store();
+export default store;

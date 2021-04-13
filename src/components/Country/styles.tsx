@@ -52,11 +52,15 @@ export const CountryWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
 
     > .left {
+      > div {
+        padding: 10px;
+      }
     }
 
     > .right {
       > .emoji {
         margin-left: 20px;
+        font-size: 40px;
       }
 
       > .language {
@@ -81,11 +85,11 @@ export const ContinentWrapper = styled.div`
     list-style-type: none;
 
     > li {
-      background-color: rgb(234, 222, 57);
-      box-shadow: rgb(199, 189, 48) -4px 4px 8px 0px,
-        rgb(255, 255, 66) 4px -4px 8px 0px;
-      -webkit-box-shadow: rgb(199, 189, 48) -4px 4px 8px 0px,
-        rgb(255, 255, 66) 4px -4px 8px 0px;
+      background-color: rgba(219, 216, 168, 0.5);
+      box-shadow: rgb(219, 216, 168) -4px 4px 8px 0px,
+        rgb(202, 202, 139) 4px -4px 8px 0px;
+      -webkit-box-shadow: rgb(219, 216, 168) -4px 4px 8px 0px,
+        rgb(202, 202, 139) 4px -4px 8px 0px;
       border-radius: 20px;
       -webkit-border-radius: 20px;
       margin: 20px;

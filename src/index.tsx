@@ -3,9 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
-import CounterStore from "./store/CounterStore";
-import { counterStoreContext } from "./store/CounterStore";
-
 import {
   ApolloClient,
   InMemoryCache,
@@ -37,10 +34,8 @@ const client = new ApolloClient({
 });
 
 ReactDOM.render(
-  <counterStoreContext.Provider value={CounterStore}>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
-  </counterStoreContext.Provider>,
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
   document.getElementById("root")
 );

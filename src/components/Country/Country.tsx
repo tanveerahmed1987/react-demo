@@ -26,7 +26,9 @@ export const Country: React.FC<CountryProp> = ({ country }) => {
       <div className="name">{country.name}</div>
       <div className="container">
         <div className="left">
-          <div className="code">({country.code})</div>
+          <div className="code">
+            Code <strong>: {country.code}</strong>
+          </div>
           <div className="currency">
             Currency <strong>: {country.currency}</strong>
           </div>

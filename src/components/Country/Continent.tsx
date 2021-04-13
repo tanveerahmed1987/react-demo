@@ -13,10 +13,6 @@ export const Continent: React.FC<ContinentProps> = () => {
     variables: { code: continentSearched?.toUpperCase() },
   });
 
-  if (data) {
-    console.log(data);
-  }
-
   return (
     <Page>
       <StyledInput
