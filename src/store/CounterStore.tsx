@@ -19,3 +19,5 @@ class CounterStore {
 }
 const counterStore = new CounterStore();
 export default counterStore;
+
+export const counterStoreContext = React.createContext(counterStore);

@@ -1,22 +1,13 @@
-import React from "react";
-import { inject, observer } from "mobx-react";
+import React, { useContext } from "react";
 import CounterStore from "../store/CounterStore";
 import styled from "styled-components";
+import { counterStoreContext } from "../store/CounterStore";
 
 const CounterWrapper = styled.div`
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-`;
-
-const StyledButton = styled.button`
-  background-color: #8888dd;
-  width: 100px;
-  height: 35px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
 `;
 
 const StyledText = styled.div`
@@ -27,22 +18,28 @@ const StyledText = styled.div`
   padding: 20px;
 `;
 
-const Counter: React.FC = inject("store")(
-  observer(() => {
-    return (
-      <CounterWrapper>
-        <StyledButton onClick={() => CounterStore.increment()}>
-          Increment
-        </StyledButton>
+const Counter: React.FC = () => {
+  const { count } = useContext(counterStoreContext);
 
-        <StyledText>{CounterStore.count}</StyledText>
+  return (
+    <CounterWrapper>
+      <button
+        className="button button1"
+        onClick={() => CounterStore.increment()}
+      >
+        Increment
+      </button>
 
-        <StyledButton onClick={() => CounterStore.decrement()}>
-          Decrement
-        </StyledButton>
-      </CounterWrapper>
-    );
-  })
-);
+      <StyledText>{count}</StyledText>
+
+      <button
+        className="button button3"
+        onClick={() => CounterStore.decrement()}
+      >
+        Decrement
+      </button>
+    </CounterWrapper>
+  );
+};
 
 export default Counter;
