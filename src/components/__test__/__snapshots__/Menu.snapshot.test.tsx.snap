@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-bdvvaa gUUmgX"
+>
+  <button
+    className="button button1"
+    onClick={[Function]}
+  >
+    Increment
+  </button>
+  <div
+    className="sc-gsDJrp cvflqT"
+  >
+    0
+  </div>
+  <button
+    className="button button3"
+    onClick={[Function]}
+  >
+    Decrement
+  </button>
+</div>
+`;
